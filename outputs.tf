@@ -1,3 +1,7 @@
+output "web_pubsub_socketios_id" {
+  description = "Map of id values across all web_pubsub_socketios, keyed the same as var.web_pubsub_socketios"
+  value       = { for k, v in azurerm_web_pubsub_socketio.web_pubsub_socketios : k => v.id }
+}
 output "web_pubsub_socketios_aad_auth_enabled" {
   description = "Map of aad_auth_enabled values across all web_pubsub_socketios, keyed the same as var.web_pubsub_socketios"
   value       = { for k, v in azurerm_web_pubsub_socketio.web_pubsub_socketios : k => v.aad_auth_enabled }
